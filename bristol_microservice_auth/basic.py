@@ -1,3 +1,4 @@
+import os
 import secrets
 
 from fastapi import Depends, HTTPException
@@ -7,18 +8,13 @@ from starlette import status
 security = HTTPBasic()
 
 
-def check_user(
-    credentials: HTTPBasicCredentials = Depends(security),
-    *,
-    correct_user: str,
-    correct_pwd: str,
-) -> str:
+def check_user(credentials: HTTPBasicCredentials = Depends(security)) -> str:
     """Авторизация."""
     is_username_correct = secrets.compare_digest(
-        credentials.username, correct_user,
+        credentials.username, os.environ['CORRECT_USER'],
     )
     is_password_correct = secrets.compare_digest(
-        credentials.password, correct_pwd,
+        credentials.password, os.environ['CORRECT_PWD'],
     )
     if not all([is_username_correct, is_password_correct]):
         raise HTTPException(
