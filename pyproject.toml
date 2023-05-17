@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "bristol-microservice-auth"
+version = "0.1.0"
+description = "Аутентификация для FastAPI"
+authors = ["Vitaliy.Mikhalchenko <Vitaliy.Mikhalchenko@bristolcapital.ru>"]
+readme = "README.md"
+packages = [{include = "bristol_microservice_auth"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.95.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
