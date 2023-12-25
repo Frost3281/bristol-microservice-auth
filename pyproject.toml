@@ -8,7 +8,7 @@ packages = [{include = "bristol_microservice_auth"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-fastapi = "^0.72.0"
+fastapi = "^0.105.0"
 
 
 [build-system]
