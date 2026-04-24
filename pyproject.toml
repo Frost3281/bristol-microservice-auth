@@ -3,7 +3,7 @@ name = "bristol-microservice-auth"
 version = "0.1.0"
 description = "Аутентификация для FastAPI"
 authors = [{ name = "Vitaliy.Mikhalchenko <Vitaliy.Mikhalchenko@bristolcapital.ru>" }]
-requires-python = "~=3.9"
+requires-python = ">=3.9,<4.0"
 readme = "README.md"
 dependencies = [
     "fastapi[all]>=0.105.0,<0.200.0",
